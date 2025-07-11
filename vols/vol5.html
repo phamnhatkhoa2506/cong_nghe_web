@@ -1,0 +1,21 @@
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: aquamarine;
+    }
+
+    input {
+        width: 200px;
+    }
+</style>
+
+<input id="case-input" type="text" onblur="changeCase()" placeholder="Enter content"/> 
+
+<script>
+    const changeCase = () => {
+        const input = document.getElementById("case-input");
+        input.value = input.value.toUpperCase()
+    }
+</script>

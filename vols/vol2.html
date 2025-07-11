@@ -1,0 +1,82 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Acme&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+    body {
+        background: rgb(106, 192, 253);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-family: "Acme", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }   
+
+    .flex-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .label-width {
+        width: 100px;
+        display: inline-block;  
+        align-items: stretch;
+        height: 100%;
+    }
+
+    .width-100 {
+        width: 100%;
+        display: flex;
+        align-items: center; 
+    }
+
+    form {
+        flex-direction: column;
+        gap: 10px
+    }
+
+    p {
+        color: red;
+        font-size: 1.5rem;
+    }
+
+    input[type="file"] {
+        width: 200px;
+    }
+</style>
+
+<form class="flex-center">
+    <p>Example about FORM</p>
+
+    <div class="width-100">
+        <label class="label-width" for="textbox">Text box:</label>
+        <input name="textbox" type="text" placeholder="Enter in text box"/>
+    </div> 
+
+    <div class="width-100">
+        <label class="label-width" for="textarea">Text area:</label>
+        <textarea name="textarea"></textarea>
+    </div>
+
+    <div class="width-100">
+        <label class="label-width" for="filebox">File box:</label>
+        <input name="filename" type="text" placeholder="Your file"/>
+        <input name="filebox" type="file" placeholder="Upload your file"/>
+    </div>
+
+    <label class="width-100">
+        <input name="radio" type="radio" />
+        Radio button
+    </label>
+
+    <label class="width-100">
+        <input name="checkbox" type="checkbox" />
+        Check box
+    </label>
+
+    <div class="button-container">
+        <button type="submit" onclick="submit(event)">Submit</button>
+        <button type="reset" onclick="reset()">Reset</button>
+    </div>
+</form>

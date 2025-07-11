@@ -1,0 +1,39 @@
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+</style>
+
+<div style="width: 100%;">
+    <div style="width: 100%;">
+        <h3>Khoa CNTT - Thông báo</h3>
+    </div>
+    <div style="width: 100%;">
+        <ul id="data-view" style="width: 100%; display: flex; flex-direction: column; justify-content: start; align-items: start; list-style-type: none; gap: 10px; padding: 0;"></ul>
+        <ul id="view-transition"></ul>
+    </div>
+</div>
+
+<script>
+    const viewTransition = document.getElementById("view-transition")
+
+    fetch('../data/notifications.json')
+        .then(response => response.json())
+        .then(data => {
+            const dataView = document.getElementById("data-view")
+
+            data.forEach(element => {
+                const newElement = document.createElement("li")
+                newElement.style.width = "100%"
+
+                newElement.innerHTML = `
+                    <strong style="width: 100%; margin: 0">${element.title}</strong>
+                    <p style="width: 100%; margin: 0">${element.created_at}</p>
+                    <p style="width: 100%; margin: 0">${element.content}</p>
+                `
+
+                dataView.appendChild(newElement)
+            });
+        })
+        .catch(error => console.log(error))
+</script>

@@ -1,0 +1,145 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Acme&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+    body {
+        background: #55CCFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-family: "Acme", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .label-input-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .com-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        gap: 1rem;
+    }
+
+    .button-container {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    #notification {
+        display: none;
+    }
+
+    input {
+        outline: none;
+        border-radius: 10px;
+        font-family: "Acme", sans-serif;
+        width: 200px;
+        padding-left: 10px;
+        border: none;
+    }
+
+    button {
+        width: 3rem;
+        border: 1px solid yellow;
+        border-radius: 10px;
+        background-color: rgb(17, 224, 35);
+        font-family: "Acme", sans-serif;
+    }
+
+    button:hover {
+        background-color: rgb(7, 111, 15);
+    }
+
+    button:active{
+        background-color: rgb(170, 187, 14);
+    }
+</style>
+
+<form name="form1" method="" action="">
+    <p>Login</p> 
+
+    <div class="label-input-container">
+        <div class="com-container">
+            <label>Username</label>
+            <label>Password</label>
+        </div>
+        <div class="com-container">
+            <input name="username" type="text" placeholder="Enter your username"/>
+            <input name="password" type="password" placeholder="Enter your password"/>
+        </div>
+    </div>
+
+    <p id="notification"></p>
+
+    <div class="button-container">
+        <button type="submit" onclick="login(event)">OK</button>
+        <button type="reset" onclick="reset()">Reset</button>
+    </div>
+</form>
+
+<script>
+    const pseudoUsername = "vnht1202"
+    const pseudoPassword = "Vnht1202@"
+
+    const notificationTag = document.getElementById("notification")
+
+    const setNotificationTag = (notifi, color) => {
+        notificationTag.textContent = notifi
+        notificationTag.style.color = color
+        notificationTag.style.display = "block"
+    }
+
+    const login = (event) => {
+        event.preventDefault();
+
+        const username = document.form1.username.value
+        const password = document.form1.password.value
+
+        if (username.length < 8) {
+            setNotificationTag("Username must have at least 8 charaters include digit, alphabe or _, uppercase and special character", "red")
+            return 
+        }
+
+        if (password.length < 8) {
+            setNotificationTag("Username must have at least 8 charaters include digit, alphabe or _, uppercases and special character", "green")
+            return 
+        }
+
+        if (username !== pseudoUsername) {
+            setNotificationTag("Wrong username!", "red")
+            return
+        }
+
+        if (password !==  pseudoPassword) {
+            setNotificationTag("Wrong password", "red")
+            return;
+        }
+
+        setNotificationTag("Login sucessfully", "green")
+    }
+
+    const reset = () => {
+        document.form1.username.value = ""
+        document.form1.password.value = ""
+        notificationTag.textContent = ""
+        notificationTag.style.display = "none"
+    }
+
+</script>

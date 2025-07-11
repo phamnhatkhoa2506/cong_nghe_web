@@ -1,0 +1,47 @@
+<div 
+    style="
+        display: flex; 
+        flex-direction: row; 
+        justify-content: center; 
+        align-items: center; 
+        height: 100%; 
+        gap: 10px
+    "
+>
+    <input 
+        style="
+            border-radius: 30px; 
+            height: 40px; 
+            width: 300px;
+            padding-left: 20px;
+            outline: none;
+            border: 1px solid red;
+        "
+        id="color-input" 
+        type="text"
+        placeholder="Enter color"
+    />
+    <button 
+        style="
+            border-radius: 50%; 
+            height: 40px; 
+            width: 40px;
+            border: none;
+            background-color: green;
+            color: white;
+            font-weight: bold;
+        "
+        onclick="changeColor()"
+    >
+        OK
+    </button>
+</div>
+
+
+<script>
+    const changeColor = () => {
+        console.log("Change Color")
+        const color = document.getElementById("color-input").value
+        document.body.style.backgroundColor = color
+    }  
+</script>

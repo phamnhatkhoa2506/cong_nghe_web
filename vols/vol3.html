@@ -1,0 +1,318 @@
+<body>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .list-menu {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            list-style-type: none;
+            gap: 15px;
+            margin: 0;
+            padding-left: 0;
+        }
+
+        .list-menu a {
+            text-decoration: none;
+            color: white;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .list-menu a:hover {
+            color: rgb(148, 146, 146);
+        }
+
+        .faculty-li {
+            background: rgb(10, 62, 118);
+            width: 60px;
+            height: 25px;
+            text-align: center;
+            margin: 0;
+            padding-top: 5px;
+            border-radius: 5px;
+        }
+
+        .partial-li a {
+            text-decoration: none;
+            color: rgb(53, 53, 53);
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .partial-li a:hover {
+            color: rgb(50, 118, 182);
+        }
+
+        .route-li {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding-left: 1rem;
+            gap: 5px;
+            margin: 7px;
+
+        }
+
+        .route-li a {
+            text-decoration: none;
+            color: rgb(53, 53, 53);
+            font-size: 12px
+        }
+
+        .route-li a:hover {
+            color: rgb(0, 100, 161);
+        }
+        
+        .route-li li:nth-child(n+2)::before {
+            content: "/";
+            padding-right: 5px;
+            color: silver;
+        }
+
+        .footer-li-title {
+            font-size: 15px;
+            color: rgb(46, 46, 46);
+        }
+
+        .footer-li {
+            padding-left: 0;
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            gap: 5px
+        }
+
+        .footer-li a {
+            text-decoration: none;
+            color: rgb(52, 52, 52);
+            font-size: 12px;
+        }
+
+        .footer-li a:hover {
+            color: rgb(105, 105, 105)
+        }
+
+        .dashed-hr {
+            border: none;                /* Remove default border */
+            border-top: 1px dashed #929292; /* Set dashed top border */
+            margin: 0;              /* Optional: vertical spacing */
+            font-size: 5px;
+            width: 90%;
+        }
+
+        .content-nav-list a {
+            text-decoration: none;
+            color: rgb(49, 49, 49);
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .content-nav-list a:hover {
+            color: rgb(0, 104, 184);
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .pagination-list {
+            list-style: none;
+            display: flex;
+            gap: 6px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .pagination-item {
+            width: 30px;
+            height: 30px;
+            background-color: silver;
+            color: white;
+            border-radius: 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-weight: bold;
+            user-select: none;
+            transition: background-color 0.3s;
+        }
+
+        .pagination-item:hover {
+            background-color: #007bff; /* xanh dương đậm hơn khi hover */
+        }
+
+        .pagination-item.active {
+            background-color: #0056b3; /* xanh đậm khi active */
+        }
+    </style>
+
+
+    <header>
+        <div style="width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <div style="display: flex; align-items: center; justify-content: center; width: 100%; background: rgb(18, 110, 209)">
+                <div style="display: flex; align-items: center; width: 90%; height: 40px;">
+                    <nav class="" style="width: 90%; flex-grow: 1">
+                        <ul class="list-menu">
+                            <li class="first"><a href="https://dut.udn.vn/Tintuc/Tintucds/gid/all">Tin tức &amp; Sự kiện</a></li>
+                            <li><a href="https://dut.udn.vn/Tintuc/Thongbaods/gid/all">Thông báo</a></li>
+                            <li><a href="https://dut.udn.vn/VanbanPhapquy">Văn bản</a></li>                    
+                            <li><a href="https://lichtuan.dut.udn.vn/" target="blank">Lịch tuần</a></li>
+                            <li><a href="https://dut.udn.vn/Danhba">Danh bạ</a></li>
+                            <li><a href="https://dut.udn.vn/Tintuc/Gioithieu/id/1012">Liên hệ</a></li>
+                        </ul>
+                    </nav>
+    
+                    <div style="display: flex; justify-content: end; align-items: center; flex-grow: 2; gap: 10px">
+                        <span>
+                            <ul class="list-menu">
+                                <li class="faculty-li"><a href="https://dut.udn.vn/KhoaCNTT/Tintucds/gid/186">Khoa</a></li>
+                                <li class="faculty-li"><a href="https://dut.udn.vn/KhoaCNTT/Tintucds/gid/186">Phòng</a></li>
+                            </ul>
+                        </span>
+                        <div class="list-menu">
+                            <a href="http://dut.udn.vn/KhoaCNTT/TintucDsEN">
+                                <img src="../images/Co-Vietnam.png" height="20">
+                            </a>
+                            <span style="color: #fff; width: 70px;">Việt Nam</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="width: 90%; display: flex; align-items: center; justify-content: start; ">
+                <h1 style="display: flex; align-items: center; margin-top: 7px;">
+                    <a href="http://dut.udn.vn/KhoaCNTT">
+                        <img src="../images/logo_truong.png" alt="DHBK">
+                    </a>
+                </h1>
+
+                <div style="flex-grow: 1;">
+                    <fieldset style="border: none; display: flex; justify-content: end;">
+                        <div style=" display: flex;; align-items: center; border: 1px solid silver; height: 25px; border-radius: 20px; padding-left: 5px;">
+                            <input style="border: none; outline: none;" type="text" placeholder="Tìm kiếm thông tin">
+                            <input style="border: none; background: none" type="submit" value="O">
+                        </div>
+                    </fieldset>		
+                </div>
+            </div>
+
+            <div style="width: 90%; display: flex; align-items: center; ">
+                <ul class="partial-li" style="display: flex; margin-top: 0; list-style-type: none; padding-left: 0; gap: 30px">
+                    <li><a href="https://dut.udn.vn/KhoaCNTT">TRANG CHỦ</a></li>
+                    <li><a href="https://dut.udn.vn/KhoaCNTT/Tintucds/gid/186">GIỚI THIỆU</a></li>
+                    <li><a href="http://dut.udn.vn/KhoaCNTT/Gioithieu/id/2026">TUYỂN SINH</a></li>
+                    <li><a href="https://dut.udn.vn/KhoaCNTT/Tintucds/gid/186">ĐÀO TẠO</a></li>
+                    <li><a href="https://dut.udn.vn/KhoaCNTT/Tintucds/gid/186">NGHIÊN CỨU KHOA HỌC</a></li>
+                    <li><a href="https://dut.udn.vn/KhoaCNTT/Tintucds/gid/186">HỢP TÁC</a>
+                    <li><a href="https://dut.udn.vn/KhoaCNTT/Tintucds/gid/186">SINH VIÊN</a></li>
+                    <li><a href="https://dut.udn.vn/KhoaCNTT/Tintucds/gid/186">CỰU SINH VIÊN</a></li>
+                    <li><a href="https://dut.udn.vn/KhoaCNTT/Gioithieu/id/1484">LIÊN HỆ</a></li>
+                </ul>
+            </div>
+
+            <div style="width: 90%; display: flex; align-items: center; background-color: rgb(226, 223, 223); border-radius: 10px;">
+                <div style="margin-top: 0px; margin-bottom: 0px">
+                    <span>
+                        <ul class="route-li" style="list-style-type: none;">
+                            <li><a href="https://dut.udn.vn/">Trang chủ</a></li>
+                            <li><a href="https://dut.udn.vn/KhoaCNTT">Khoa Công nghệ thông tin</a></li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main style="width: 100%; display: flex; justify-content: center; margin-top: 10px; margin-bottom: 10px;">
+        <div style="width: 90%; display: flex; flex-direction: row;">
+            <aside style="border: 1px solid silver; padding: 0; width: 320px;">
+                <span>
+                    <p style="padding: 20px; margin: 0; font-weight: bold; font-size: 15px; color: rgb(19, 148, 253);">K. CÔNG NGHỆ THÔNG TIN</p>
+                    <hr style="margin: 0;"/>
+                    <div class="content-nav-list" style="display: flex; flex-direction: column; gap: 10px; justify-content: center; align-items: start; margin-top: 10px; padding-left: 20px;">
+                        <a class="" href="#" onclick="loadNotificationData(event, 1)">Thông báo</a>
+                        <hr class="dashed-hr">
+                        <a class="" href="#" onclick="loadNewsData(event, 1)">Tin tức hoạt động</a>
+                        <hr class="dashed-hr">
+                        <a class="" href="#">Đào tạo đại học</a>
+                        <hr class="dashed-hr">
+                        <a class="" href="#">Đào tạo sau đại học</a>
+                        <hr class="dashed-hr">
+                        <a class="" href="#">Nghiên cứu khoa học</a>
+                        <hr class="dashed-hr">
+                        <a class="" href="#">Biểu mẫu của Khoa</a>
+                        <hr class="dashed-hr">
+                        
+                        <h3 style="margin: 0; margin-bottom: 10px; font-size: 13px;">
+                            Góp ý với Khoa
+                        </h3>
+                    </div>
+                </span>
+            </aside>
+            <div id="content" style="width: 100%; margin-left: 20px;">
+                <!-- <iframe id="myFrame" name="f1" src="../frames/frame1.html" width="100%" frameborder="0"></iframe> -->
+            </div>
+        </div>
+    </main>
+
+    <footer style="width: 100%; display: flex; justify-content: center; background: rgb(61, 135, 239);">
+        <div style="width: 90%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <div style=" width: 100%; display: flex; flex-direction: row; justify-content: space-between; ">
+                <div>
+                    <h3 class="footer-li-title">Tuyển sinh &amp; đào tạo</h3>
+                    <ul class="footer-li">
+                        <li><a href="https://tuyensinh.dut.udn.vn/" target="_blank">Thông tin tuyển sinh</a></li>
+                        <li><a href="https://dut.udn.vn/TrangDaoTao">Đào tạo đại học</a></li>
+                        <li><a href="https://dut.udn.vn/TrangDaoTaoSDH">Đào tạo sau đại học</a></li>
+                        <li><a href="https://dut.udn.vn/TrangDaotaoTX">Đào tạo thường xuyên</a></li>
+                        <li><a href="https://dut.udn.vn/VanBanPhapQuy">Văn bản pháp quy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-li-title">Các liên kết khác</h3>
+                    <ul class="footer-li">
+                        <li><a href="http://lib.dut.udn.vn/" target="_blank">Thư viện</a></li>
+                        <li><a href="http://lms.dut.udn.vn/" target="_blank">E-Learning</a></li>
+                        <li><a href="https://login.microsoftonline.com/" target="_blank">Email</a></li>
+                        <li><a href="http://sv.dut.udn.vn/" target="_blank">Hệ thống thông tin sinh viên</a></li>
+                        <li><a href="http://cb.dut.udn.vn/" target="_blank">Hệ thống tác nghiệp</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-li-title">Kết nối</h3>
+                    <ul class="footer-li">
+                        <li><a href="https://www.facebook.com/watch/bachkhoaDUT" target="_blank" title="Facebook"><span class="wd-icon-28 wd-icon-facebook"></span>Facebook</a></li>
+                        <li><a href="https://www.youtube.com/channel/UCDEvOrrx6-cJfcMQGOHHysg" target="_blank" title="Youtube"><span class="wd-icon-28 wd-icon-youtube"></span>Youtube</a></li>
+                        <li><a href="https://twitter.com/Bachkhoa_Danang" target="_blank" title="Twitter"><span class="wd-icon-28 wd-icon-twitter"></span>Twitter</a></li>					
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-li-title">Lượt truy cập</h3>
+                    <ul class="footer-li" style="color: rgb(52, 52, 52); font-size: 12px;">
+                        <li>Tổng số lượt: <b>3.738.154</b></li>
+                        <li>Đang online: <b>41</b></li>
+                        <li>Webmaster: WebAdmin@dut.udn.vn</li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <p style="font-size: 15px; color: silver;">© Bản quyền Trường Đại học Bách khoa - Đại học Đà Nẵng</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/notifications.js"></script>
+    <script src="../js/news.js"></script>
+</body>
+
+
+
+    

@@ -1,0 +1,23 @@
+
+<body>
+    <form name="f1">
+        <select name="s1" id="select1">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+        </select>
+    
+        <input name="t1" type="number"/>
+        <button onclick="commitNumber()">OK</button>
+    </form>
+</body>
+
+<script>
+    const commitNumber = () => {
+        const num = Number(document.f1.t1.value);
+        document.f1.s1.selectedIndex = num;
+    }
+</script>
+
+
